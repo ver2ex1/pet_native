@@ -1,9 +1,11 @@
+import {Text, Button} from '@rneui/themed';
 import React, {useEffect, useRef} from 'react';
 import {SafeAreaView, Animated, Image, Easing} from 'react-native';
 import styles from './styles';
 
 const HomeScreen = () => {
   const animation = useRef(new Animated.Value(-300)).current;
+  const infoAnimation = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     Animated.timing(animation, {
       toValue: 0,
@@ -11,7 +13,13 @@ const HomeScreen = () => {
       useNativeDriver: true,
       easing: Easing.linear,
     }).start();
-  }, [animation]);
+
+    Animated.timing(infoAnimation, {
+      toValue: 1,
+      duration: 1500,
+      useNativeDriver: true,
+    }).start();
+  }, [animation, infoAnimation]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -20,7 +28,22 @@ const HomeScreen = () => {
           ...styles,
           transform: [{translateX: animation}],
         }}>
-        <Image source={require('../../assets/images/car.png')} />
+        <Image
+          source={require('../../assets/images/car.png')}
+          style={styles.image}
+        />
+      </Animated.View>
+      <Animated.View style={{...styles.info, opacity: infoAnimation}}>
+        <Text h1 style={styles.title}>
+          Premium cars. Enjoy the luxury
+        </Text>
+        <Text style={styles.subTitle}>
+          Premium and prestige car daily rental. Experience the thrill at a
+          lower price
+        </Text>
+      </Animated.View>
+      <Animated.View style={{...styles.buttonWrapper, opacity: infoAnimation}}>
+        <Button title="Let's Go" style={styles.button} />
       </Animated.View>
     </SafeAreaView>
   );
