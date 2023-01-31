@@ -1,7 +1,7 @@
 import {createTheme} from '@rneui/themed';
 
 const theme = createTheme({
-  lightColors: {secondary: '#fff'},
+  lightColors: {primary: '#F3F3F3', secondary: '#fff', grey0: '#787878'},
   darkColors: {
     primary: '#2c2b35',
     secondary: '#8E8E8E',
@@ -9,6 +9,7 @@ const theme = createTheme({
   components: {
     Text: {
       h1Style: {fontFamily: 'Barlow-Bold'},
+      h2Style: {fontSize: 12},
       style: {fontFamily: 'Barlow-Regular'},
     },
     Button: {

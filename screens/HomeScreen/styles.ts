@@ -2,21 +2,24 @@ import {StyleSheet} from 'react-native';
 import theme from '../../config/theme';
 
 const styles = StyleSheet.create({
-  container: {backgroundColor: theme.darkColors?.primary, flex: 1},
-  title: {
-    color: theme.lightColors?.secondary,
-    maxWidth: 320,
+  container: {
+    backgroundColor: theme.lightColors?.secondary,
+    flex: 1,
   },
-  image: {height: 420, marginTop: 60},
-  info: {
-    paddingLeft: 20,
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 12,
+  content: {
+    padding: 30,
   },
-  subTitle: {color: theme.darkColors?.secondary, maxWidth: 280},
-  button: {width: 319},
-  buttonWrapper: {display: 'flex', alignItems: 'center', marginTop: 40},
+  carCard: {
+    padding: 15,
+    backgroundColor: theme.lightColors?.primary,
+    borderRadius: 20,
+  },
+  carCardTitle: {
+    textTransform: 'uppercase',
+    color: theme.lightColors?.grey0,
+    letterSpacing: 2.4,
+  },
+  image: {height: 170, width: 300, transform: [{scaleX: -1}]},
 });
 
 export default styles;
