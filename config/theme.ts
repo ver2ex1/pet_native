@@ -5,6 +5,7 @@ const theme = createTheme({
   darkColors: {
     primary: '#2c2b35',
     secondary: '#8E8E8E',
+    black: '#2C2B34',
   },
   components: {
     Text: {

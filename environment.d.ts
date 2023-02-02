@@ -4,6 +4,7 @@ declare global {
   namespace NodeJS {
     interface ProcessEnv {
       REACT_APP_BASE_URL: string;
+      Api_Key: string;
     }
   }
 }
